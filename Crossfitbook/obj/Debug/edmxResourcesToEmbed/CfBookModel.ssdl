@@ -1,4 +1,590 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="CfBookModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
-  <EntityContainer Name="CfBookModelTargetContainer" />
+<Schema Namespace="CfBookModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CfBookModelStoreContainer">
+    <EntitySet Name="ClubSet" EntityType="CfBookModel.Store.ClubSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ClubWorkTimeSet" EntityType="CfBookModel.Store.ClubWorkTimeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EquipmentSet" EntityType="CfBookModel.Store.EquipmentSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ManufacturerSet" EntityType="CfBookModel.Store.ManufacturerSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CountrySet" EntityType="CfBookModel.Store.CountrySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CitySet" EntityType="CfBookModel.Store.CitySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SocialNetworkSet" EntityType="CfBookModel.Store.SocialNetworkSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WodSet" EntityType="CfBookModel.Store.WodSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ExerciseSet" EntityType="CfBookModel.Store.ExerciseSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ExerciseTypeSet" EntityType="CfBookModel.Store.ExerciseTypeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImageSet" EntityType="CfBookModel.Store.ImageSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoadTypeSet" EntityType="CfBookModel.Store.LoadTypeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ClubNetworkSet" EntityType="CfBookModel.Store.ClubNetworkSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WodCategorySet" EntityType="CfBookModel.Store.WodCategorySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NewsSet" EntityType="CfBookModel.Store.NewsSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NewsTypeSet" EntityType="CfBookModel.Store.NewsTypeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ClubSocialNetwork" EntityType="CfBookModel.Store.ClubSocialNetwork" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ExerciseImage" EntityType="CfBookModel.Store.ExerciseImage" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NewsImage" EntityType="CfBookModel.Store.NewsImage" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ClubEquipment" EntityType="CfBookModel.Store.ClubEquipment" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ClubCity" Association="CfBookModel.Store.ClubCity">
+      <End Role="Club" EntitySet="ClubSet" />
+      <End Role="City" EntitySet="CitySet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClubSocialNetwork_Club" Association="CfBookModel.Store.FK_ClubSocialNetwork_Club">
+      <End Role="Club" EntitySet="ClubSet" />
+      <End Role="ClubSocialNetwork" EntitySet="ClubSocialNetwork" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClubSocialNetwork_SocialNetwork" Association="CfBookModel.Store.FK_ClubSocialNetwork_SocialNetwork">
+      <End Role="SocialNetwork" EntitySet="SocialNetworkSet" />
+      <End Role="ClubSocialNetwork" EntitySet="ClubSocialNetwork" />
+    </AssociationSet>
+    <AssociationSet Name="CountryCity" Association="CfBookModel.Store.CountryCity">
+      <End Role="Country" EntitySet="CountrySet" />
+      <End Role="City" EntitySet="CitySet" />
+    </AssociationSet>
+    <AssociationSet Name="CountryManufacturer" Association="CfBookModel.Store.CountryManufacturer">
+      <End Role="Country" EntitySet="CountrySet" />
+      <End Role="Manufacturer" EntitySet="ManufacturerSet" />
+    </AssociationSet>
+    <AssociationSet Name="EquipmentExercise" Association="CfBookModel.Store.EquipmentExercise">
+      <End Role="Equipment" EntitySet="EquipmentSet" />
+      <End Role="Exercise" EntitySet="ExerciseSet" />
+    </AssociationSet>
+    <AssociationSet Name="ExerciseTypeExercise" Association="CfBookModel.Store.ExerciseTypeExercise">
+      <End Role="ExerciseType" EntitySet="ExerciseTypeSet" />
+      <End Role="Exercise" EntitySet="ExerciseSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExerciseImage_Exercise" Association="CfBookModel.Store.FK_ExerciseImage_Exercise">
+      <End Role="Exercise" EntitySet="ExerciseSet" />
+      <End Role="ExerciseImage" EntitySet="ExerciseImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExerciseImage_Image" Association="CfBookModel.Store.FK_ExerciseImage_Image">
+      <End Role="Image" EntitySet="ImageSet" />
+      <End Role="ExerciseImage" EntitySet="ExerciseImage" />
+    </AssociationSet>
+    <AssociationSet Name="ClubNetworkClub" Association="CfBookModel.Store.ClubNetworkClub">
+      <End Role="ClubNetwork" EntitySet="ClubNetworkSet" />
+      <End Role="Club" EntitySet="ClubSet" />
+    </AssociationSet>
+    <AssociationSet Name="ClubWorkTimeClub" Association="CfBookModel.Store.ClubWorkTimeClub">
+      <End Role="ClubWorkTime" EntitySet="ClubWorkTimeSet" />
+      <End Role="Club" EntitySet="ClubSet" />
+    </AssociationSet>
+    <AssociationSet Name="LoadTypeWod" Association="CfBookModel.Store.LoadTypeWod">
+      <End Role="LoadType" EntitySet="LoadTypeSet" />
+      <End Role="Wod" EntitySet="WodSet" />
+    </AssociationSet>
+    <AssociationSet Name="LoadTypeExercise" Association="CfBookModel.Store.LoadTypeExercise">
+      <End Role="LoadType" EntitySet="LoadTypeSet" />
+      <End Role="Exercise" EntitySet="ExerciseSet" />
+    </AssociationSet>
+    <AssociationSet Name="WodExercise" Association="CfBookModel.Store.WodExercise">
+      <End Role="Wod" EntitySet="WodSet" />
+      <End Role="Exercise" EntitySet="ExerciseSet" />
+    </AssociationSet>
+    <AssociationSet Name="WodCategoryWod" Association="CfBookModel.Store.WodCategoryWod">
+      <End Role="WodCategory" EntitySet="WodCategorySet" />
+      <End Role="Wod" EntitySet="WodSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewsImage_News" Association="CfBookModel.Store.FK_NewsImage_News">
+      <End Role="News" EntitySet="NewsSet" />
+      <End Role="NewsImage" EntitySet="NewsImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewsImage_Image" Association="CfBookModel.Store.FK_NewsImage_Image">
+      <End Role="Image" EntitySet="ImageSet" />
+      <End Role="NewsImage" EntitySet="NewsImage" />
+    </AssociationSet>
+    <AssociationSet Name="NewsTypeNews" Association="CfBookModel.Store.NewsTypeNews">
+      <End Role="NewsType" EntitySet="NewsTypeSet" />
+      <End Role="News" EntitySet="NewsSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClubEquipment_Club" Association="CfBookModel.Store.FK_ClubEquipment_Club">
+      <End Role="Club" EntitySet="ClubSet" />
+      <End Role="ClubEquipment" EntitySet="ClubEquipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClubEquipment_Equipment" Association="CfBookModel.Store.FK_ClubEquipment_Equipment">
+      <End Role="Equipment" EntitySet="EquipmentSet" />
+      <End Role="ClubEquipment" EntitySet="ClubEquipment" />
+    </AssociationSet>
+    <AssociationSet Name="ManufacturerEquipment" Association="CfBookModel.Store.ManufacturerEquipment">
+      <End Role="Manufacturer" EntitySet="ManufacturerSet" />
+      <End Role="Equipment" EntitySet="EquipmentSet" />
+    </AssociationSet>
+    <AssociationSet Name="ManufacturerNews" Association="CfBookModel.Store.ManufacturerNews">
+      <End Role="Manufacturer" EntitySet="ManufacturerSet" />
+      <End Role="News" EntitySet="NewsSet" />
+    </AssociationSet>
+    <AssociationSet Name="ClubNews" Association="CfBookModel.Store.ClubNews">
+      <End Role="Club" EntitySet="ClubSet" />
+      <End Role="News" EntitySet="NewsSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ClubSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="WebPage" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MaxPeopleCount" Type="int" Nullable="false" />
+    <Property Name="IsSwimmingPool" Type="bit" Nullable="true" />
+    <Property Name="IsSauna" Type="bit" Nullable="false" />
+    <Property Name="CellingHeight" Type="float" Nullable="false" />
+    <Property Name="XCoordinate" Type="float" Nullable="false" />
+    <Property Name="YCoordinate" Type="float" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ClubNetwork_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClubWorkTimeSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MondayStart" Type="time" Nullable="true" />
+    <Property Name="MondayEnd" Type="time" Nullable="true" />
+    <Property Name="TuesdayStart" Type="time" Nullable="true" />
+    <Property Name="TuesdayEnd" Type="time" Nullable="true" />
+    <Property Name="WednesdayStart" Type="time" Nullable="true" />
+    <Property Name="WednesdayEnd" Type="time" Nullable="true" />
+    <Property Name="ThursdayStart" Type="time" Nullable="true" />
+    <Property Name="ThursdayEnd" Type="time" Nullable="true" />
+    <Property Name="FridayStart" Type="time" Nullable="true" />
+    <Property Name="FridayEnd" Type="time" Nullable="true" />
+    <Property Name="SaturdayStart" Type="time" Nullable="true" />
+    <Property Name="SaturdayEnd" Type="time" Nullable="true" />
+    <Property Name="SundayStart" Type="time" Nullable="true" />
+    <Property Name="SundayEnd" Type="time" Nullable="true" />
+    <Property Name="Club_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EquipmentSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PhotoPath" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="LogoPath" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Manufacturer_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManufacturerSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Website" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Country_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CountrySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FlagIcon" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CitySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Club_Id" Type="int" Nullable="false" />
+    <Property Name="Country_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SocialNetworkSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Href" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IconPath" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="WodSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Rounds" Type="int" Nullable="false" />
+    <Property Name="Task" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Rating" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LoadType_Id" Type="int" Nullable="false" />
+    <Property Name="WodCategory_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExerciseSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Equipment_Id" Type="int" Nullable="false" />
+    <Property Name="ExerciseType_Id" Type="int" Nullable="false" />
+    <Property Name="LoadType_Id" Type="int" Nullable="false" />
+    <Property Name="Wod_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExerciseTypeSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ImageSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoadTypeSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClubNetworkSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WodCategorySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NewsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PublicDate" Type="datetime" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NewsType_Id" Type="int" Nullable="false" />
+    <Property Name="Manufacturer_Id" Type="int" Nullable="false" />
+    <Property Name="Club_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NewsTypeSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClubSocialNetwork">
+    <Key>
+      <PropertyRef Name="Club_Id" />
+      <PropertyRef Name="SocialNetwork_Id" />
+    </Key>
+    <Property Name="Club_Id" Type="int" Nullable="false" />
+    <Property Name="SocialNetwork_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExerciseImage">
+    <Key>
+      <PropertyRef Name="Exercise_Id" />
+      <PropertyRef Name="Image_Id" />
+    </Key>
+    <Property Name="Exercise_Id" Type="int" Nullable="false" />
+    <Property Name="Image_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NewsImage">
+    <Key>
+      <PropertyRef Name="News_Id" />
+      <PropertyRef Name="Image_Id" />
+    </Key>
+    <Property Name="News_Id" Type="int" Nullable="false" />
+    <Property Name="Image_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClubEquipment">
+    <Key>
+      <PropertyRef Name="Club_Id" />
+      <PropertyRef Name="Equipment_Id" />
+    </Key>
+    <Property Name="Club_Id" Type="int" Nullable="false" />
+    <Property Name="Equipment_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="ClubCity">
+    <End Role="Club" Type="CfBookModel.Store.ClubSet" Multiplicity="1" />
+    <End Role="City" Type="CfBookModel.Store.CitySet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Club">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="Club_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CountryCity">
+    <End Role="Country" Type="CfBookModel.Store.CountrySet" Multiplicity="1" />
+    <End Role="City" Type="CfBookModel.Store.CitySet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="Country_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CountryManufacturer">
+    <End Role="Country" Type="CfBookModel.Store.CountrySet" Multiplicity="1" />
+    <End Role="Manufacturer" Type="CfBookModel.Store.ManufacturerSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Manufacturer">
+        <PropertyRef Name="Country_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EquipmentExercise">
+    <End Role="Equipment" Type="CfBookModel.Store.EquipmentSet" Multiplicity="1" />
+    <End Role="Exercise" Type="CfBookModel.Store.ExerciseSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Exercise">
+        <PropertyRef Name="Equipment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ExerciseTypeExercise">
+    <End Role="ExerciseType" Type="CfBookModel.Store.ExerciseTypeSet" Multiplicity="1" />
+    <End Role="Exercise" Type="CfBookModel.Store.ExerciseSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExerciseType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Exercise">
+        <PropertyRef Name="ExerciseType_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ClubNetworkClub">
+    <End Role="ClubNetwork" Type="CfBookModel.Store.ClubNetworkSet" Multiplicity="1" />
+    <End Role="Club" Type="CfBookModel.Store.ClubSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClubNetwork">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Club">
+        <PropertyRef Name="ClubNetwork_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ClubWorkTimeClub">
+    <End Role="ClubWorkTime" Type="CfBookModel.Store.ClubWorkTimeSet" Multiplicity="*" />
+    <End Role="Club" Type="CfBookModel.Store.ClubSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Club">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClubWorkTime">
+        <PropertyRef Name="Club_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LoadTypeWod">
+    <End Role="LoadType" Type="CfBookModel.Store.LoadTypeSet" Multiplicity="1" />
+    <End Role="Wod" Type="CfBookModel.Store.WodSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Wod">
+        <PropertyRef Name="LoadType_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LoadTypeExercise">
+    <End Role="LoadType" Type="CfBookModel.Store.LoadTypeSet" Multiplicity="1" />
+    <End Role="Exercise" Type="CfBookModel.Store.ExerciseSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoadType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Exercise">
+        <PropertyRef Name="LoadType_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="WodExercise">
+    <End Role="Wod" Type="CfBookModel.Store.WodSet" Multiplicity="1" />
+    <End Role="Exercise" Type="CfBookModel.Store.ExerciseSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Wod">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Exercise">
+        <PropertyRef Name="Wod_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="WodCategoryWod">
+    <End Role="WodCategory" Type="CfBookModel.Store.WodCategorySet" Multiplicity="1" />
+    <End Role="Wod" Type="CfBookModel.Store.WodSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WodCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Wod">
+        <PropertyRef Name="WodCategory_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NewsTypeNews">
+    <End Role="NewsType" Type="CfBookModel.Store.NewsTypeSet" Multiplicity="1" />
+    <End Role="News" Type="CfBookModel.Store.NewsSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NewsType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="NewsType_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ManufacturerEquipment">
+    <End Role="Manufacturer" Type="CfBookModel.Store.ManufacturerSet" Multiplicity="1" />
+    <End Role="Equipment" Type="CfBookModel.Store.EquipmentSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manufacturer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Equipment">
+        <PropertyRef Name="Manufacturer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ManufacturerNews">
+    <End Role="Manufacturer" Type="CfBookModel.Store.ManufacturerSet" Multiplicity="1" />
+    <End Role="News" Type="CfBookModel.Store.NewsSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manufacturer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="Manufacturer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ClubNews">
+    <End Role="Club" Type="CfBookModel.Store.ClubSet" Multiplicity="1" />
+    <End Role="News" Type="CfBookModel.Store.NewsSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Club">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="Club_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClubSocialNetwork_Club">
+    <End Role="Club" Type="CfBookModel.Store.ClubSet" Multiplicity="1" />
+    <End Role="ClubSocialNetwork" Type="CfBookModel.Store.ClubSocialNetwork" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Club">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClubSocialNetwork">
+        <PropertyRef Name="Club_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClubSocialNetwork_SocialNetwork">
+    <End Role="ClubSocialNetwork" Type="CfBookModel.Store.ClubSocialNetwork" Multiplicity="*" />
+    <End Role="SocialNetwork" Type="CfBookModel.Store.SocialNetworkSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="SocialNetwork">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClubSocialNetwork">
+        <PropertyRef Name="SocialNetwork_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExerciseImage_Exercise">
+    <End Role="Exercise" Type="CfBookModel.Store.ExerciseSet" Multiplicity="1" />
+    <End Role="ExerciseImage" Type="CfBookModel.Store.ExerciseImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Exercise">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExerciseImage">
+        <PropertyRef Name="Exercise_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExerciseImage_Image">
+    <End Role="ExerciseImage" Type="CfBookModel.Store.ExerciseImage" Multiplicity="*" />
+    <End Role="Image" Type="CfBookModel.Store.ImageSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExerciseImage">
+        <PropertyRef Name="Image_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewsImage_News">
+    <End Role="News" Type="CfBookModel.Store.NewsSet" Multiplicity="1" />
+    <End Role="NewsImage" Type="CfBookModel.Store.NewsImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="News">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NewsImage">
+        <PropertyRef Name="News_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewsImage_Image">
+    <End Role="NewsImage" Type="CfBookModel.Store.NewsImage" Multiplicity="*" />
+    <End Role="Image" Type="CfBookModel.Store.ImageSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NewsImage">
+        <PropertyRef Name="Image_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClubEquipment_Club">
+    <End Role="Club" Type="CfBookModel.Store.ClubSet" Multiplicity="1" />
+    <End Role="ClubEquipment" Type="CfBookModel.Store.ClubEquipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Club">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClubEquipment">
+        <PropertyRef Name="Club_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClubEquipment_Equipment">
+    <End Role="ClubEquipment" Type="CfBookModel.Store.ClubEquipment" Multiplicity="*" />
+    <End Role="Equipment" Type="CfBookModel.Store.EquipmentSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClubEquipment">
+        <PropertyRef Name="Equipment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

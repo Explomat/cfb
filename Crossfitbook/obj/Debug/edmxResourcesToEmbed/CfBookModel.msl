@@ -1,6 +1,323 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
-  <Alias Key="Model" Value="CfBookModel" />
-  <Alias Key="Target" Value="CfBookModel.Store" />
-  <EntityContainerMapping CdmEntityContainer="CfBookModelContainer" StorageEntityContainer="CfBookModelTargetContainer" />
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CfBookModelStoreContainer" CdmEntityContainer="CfBookModelContainer">
+    <EntitySetMapping Name="ClubSet">
+      <EntityTypeMapping TypeName="IsTypeOf(CfBookModel.Club)">
+        <MappingFragment StoreEntitySet="ClubSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="WebPage" ColumnName="WebPage" />
+          <ScalarProperty Name="MaxPeopleCount" ColumnName="MaxPeopleCount" />
+          <ScalarProperty Name="IsSwimmingPool" ColumnName="IsSwimmingPool" />
+          <ScalarProperty Name="IsSauna" ColumnName="IsSauna" />
+          <ScalarProperty Name="CellingHeight" ColumnName="CellingHeight" />
+          <ScalarProperty Name="XCoordinate" ColumnName="XCoordinate" />
+          <ScalarProperty Name="YCoordinate" ColumnName="YCoordinate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClubWorkTimeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(CfBookModel.ClubWorkTime)">
+        <MappingFragment StoreEntitySet="ClubWorkTimeSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MondayStart" ColumnName="MondayStart" />
+          <ScalarProperty Name="MondayEnd" ColumnName="MondayEnd" />
+          <ScalarProperty Name="TuesdayStart" ColumnName="TuesdayStart" />
+          <ScalarProperty Name="TuesdayEnd" ColumnName="TuesdayEnd" />
+          <ScalarProperty Name="WednesdayStart" ColumnName="WednesdayStart" />
+          <ScalarProperty Name="WednesdayEnd" ColumnName="WednesdayEnd" />
+          <ScalarProperty Name="ThursdayStart" ColumnName="ThursdayStart" />
+          <ScalarProperty Name="ThursdayEnd" ColumnName="ThursdayEnd" />
+          <ScalarProperty Name="FridayStart" ColumnName="FridayStart" />
+          <ScalarProperty Name="FridayEnd" ColumnName="FridayEnd" />
+          <ScalarProperty Name="SaturdayStart" ColumnName="SaturdayStart" />
+          <ScalarProperty Name="SaturdayEnd" ColumnName="SaturdayEnd" />
+          <ScalarProperty Name="SundayStart" ColumnName="SundayStart" />
+          <ScalarProperty Name="SundayEnd" ColumnName="SundayEnd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EquipmentSet">
+      <EntityTypeMapping TypeName="IsTypeOf(CfBookModel.Equipment)">
+        <MappingFragment StoreEntitySet="EquipmentSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+          <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManufacturerSet">
+      <EntityTypeMapping TypeName="IsTypeOf(CfBookModel.Manufacturer)">
+        <MappingFragment StoreEntitySet="ManufacturerSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CountrySet">
+      <EntityTypeMapping TypeName="IsTypeOf(CfBookModel.Country)">
+        <MappingFragment StoreEntitySet="CountrySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FlagIcon" ColumnName="FlagIcon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CitySet">
+      <EntityTypeMapping TypeName="IsTypeOf(CfBookModel.City)">
+        <MappingFragment StoreEntitySet="CitySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SocialNetworkSet">
+      <EntityTypeMapping TypeName="IsTypeOf(CfBookModel.SocialNetwork)">
+        <MappingFragment StoreEntitySet="SocialNetworkSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Href" ColumnName="Href" />
+          <ScalarProperty Name="IconPath" ColumnName="IconPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WodSet">
+      <EntityTypeMapping TypeName="IsTypeOf(CfBookModel.Wod)">
+        <MappingFragment StoreEntitySet="WodSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Rounds" ColumnName="Rounds" />
+          <ScalarProperty Name="Task" ColumnName="Task" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExerciseSet">
+      <EntityTypeMapping TypeName="IsTypeOf(CfBookModel.Exercise)">
+        <MappingFragment StoreEntitySet="ExerciseSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExerciseTypeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(CfBookModel.ExerciseType)">
+        <MappingFragment StoreEntitySet="ExerciseTypeSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImageSet">
+      <EntityTypeMapping TypeName="IsTypeOf(CfBookModel.Image)">
+        <MappingFragment StoreEntitySet="ImageSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoadTypeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(CfBookModel.LoadType)">
+        <MappingFragment StoreEntitySet="LoadTypeSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClubNetworkSet">
+      <EntityTypeMapping TypeName="IsTypeOf(CfBookModel.ClubNetwork)">
+        <MappingFragment StoreEntitySet="ClubNetworkSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WodCategorySet">
+      <EntityTypeMapping TypeName="IsTypeOf(CfBookModel.WodCategory)">
+        <MappingFragment StoreEntitySet="WodCategorySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(CfBookModel.News)">
+        <MappingFragment StoreEntitySet="NewsSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="PublicDate" ColumnName="PublicDate" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewsTypeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(CfBookModel.NewsType)">
+        <MappingFragment StoreEntitySet="NewsTypeSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ClubCity" TypeName="CfBookModel.ClubCity" StoreEntitySet="CitySet">
+      <EndProperty Name="Club">
+        <ScalarProperty Name="Id" ColumnName="Club_Id" />
+      </EndProperty>
+      <EndProperty Name="City">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ClubSocialNetwork" TypeName="CfBookModel.ClubSocialNetwork" StoreEntitySet="ClubSocialNetwork">
+      <EndProperty Name="Club">
+        <ScalarProperty Name="Id" ColumnName="Club_Id" />
+      </EndProperty>
+      <EndProperty Name="SocialNetwork">
+        <ScalarProperty Name="Id" ColumnName="SocialNetwork_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CountryCity" TypeName="CfBookModel.CountryCity" StoreEntitySet="CitySet">
+      <EndProperty Name="Country">
+        <ScalarProperty Name="Id" ColumnName="Country_Id" />
+      </EndProperty>
+      <EndProperty Name="City">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CountryManufacturer" TypeName="CfBookModel.CountryManufacturer" StoreEntitySet="ManufacturerSet">
+      <EndProperty Name="Country">
+        <ScalarProperty Name="Id" ColumnName="Country_Id" />
+      </EndProperty>
+      <EndProperty Name="Manufacturer">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EquipmentExercise" TypeName="CfBookModel.EquipmentExercise" StoreEntitySet="ExerciseSet">
+      <EndProperty Name="Equipment">
+        <ScalarProperty Name="Id" ColumnName="Equipment_Id" />
+      </EndProperty>
+      <EndProperty Name="Exercise">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ExerciseTypeExercise" TypeName="CfBookModel.ExerciseTypeExercise" StoreEntitySet="ExerciseSet">
+      <EndProperty Name="ExerciseType">
+        <ScalarProperty Name="Id" ColumnName="ExerciseType_Id" />
+      </EndProperty>
+      <EndProperty Name="Exercise">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ExerciseImage" TypeName="CfBookModel.ExerciseImage" StoreEntitySet="ExerciseImage">
+      <EndProperty Name="Exercise">
+        <ScalarProperty Name="Id" ColumnName="Exercise_Id" />
+      </EndProperty>
+      <EndProperty Name="Image">
+        <ScalarProperty Name="Id" ColumnName="Image_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ClubNetworkClub" TypeName="CfBookModel.ClubNetworkClub" StoreEntitySet="ClubSet">
+      <EndProperty Name="ClubNetwork">
+        <ScalarProperty Name="Id" ColumnName="ClubNetwork_Id" />
+      </EndProperty>
+      <EndProperty Name="Club">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ClubWorkTimeClub" TypeName="CfBookModel.ClubWorkTimeClub" StoreEntitySet="ClubWorkTimeSet">
+      <EndProperty Name="Club">
+        <ScalarProperty Name="Id" ColumnName="Club_Id" />
+      </EndProperty>
+      <EndProperty Name="ClubWorkTime">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="LoadTypeWod" TypeName="CfBookModel.LoadTypeWod" StoreEntitySet="WodSet">
+      <EndProperty Name="LoadType">
+        <ScalarProperty Name="Id" ColumnName="LoadType_Id" />
+      </EndProperty>
+      <EndProperty Name="Wod">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="LoadTypeExercise" TypeName="CfBookModel.LoadTypeExercise" StoreEntitySet="ExerciseSet">
+      <EndProperty Name="LoadType">
+        <ScalarProperty Name="Id" ColumnName="LoadType_Id" />
+      </EndProperty>
+      <EndProperty Name="Exercise">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="WodExercise" TypeName="CfBookModel.WodExercise" StoreEntitySet="ExerciseSet">
+      <EndProperty Name="Wod">
+        <ScalarProperty Name="Id" ColumnName="Wod_Id" />
+      </EndProperty>
+      <EndProperty Name="Exercise">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="WodCategoryWod" TypeName="CfBookModel.WodCategoryWod" StoreEntitySet="WodSet">
+      <EndProperty Name="WodCategory">
+        <ScalarProperty Name="Id" ColumnName="WodCategory_Id" />
+      </EndProperty>
+      <EndProperty Name="Wod">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="NewsImage" TypeName="CfBookModel.NewsImage" StoreEntitySet="NewsImage">
+      <EndProperty Name="News">
+        <ScalarProperty Name="Id" ColumnName="News_Id" />
+      </EndProperty>
+      <EndProperty Name="Image">
+        <ScalarProperty Name="Id" ColumnName="Image_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="NewsTypeNews" TypeName="CfBookModel.NewsTypeNews" StoreEntitySet="NewsSet">
+      <EndProperty Name="NewsType">
+        <ScalarProperty Name="Id" ColumnName="NewsType_Id" />
+      </EndProperty>
+      <EndProperty Name="News">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ClubEquipment" TypeName="CfBookModel.ClubEquipment" StoreEntitySet="ClubEquipment">
+      <EndProperty Name="Club">
+        <ScalarProperty Name="Id" ColumnName="Club_Id" />
+      </EndProperty>
+      <EndProperty Name="Equipment">
+        <ScalarProperty Name="Id" ColumnName="Equipment_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ManufacturerEquipment" TypeName="CfBookModel.ManufacturerEquipment" StoreEntitySet="EquipmentSet">
+      <EndProperty Name="Manufacturer">
+        <ScalarProperty Name="Id" ColumnName="Manufacturer_Id" />
+      </EndProperty>
+      <EndProperty Name="Equipment">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ManufacturerNews" TypeName="CfBookModel.ManufacturerNews" StoreEntitySet="NewsSet">
+      <EndProperty Name="Manufacturer">
+        <ScalarProperty Name="Id" ColumnName="Manufacturer_Id" />
+      </EndProperty>
+      <EndProperty Name="News">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ClubNews" TypeName="CfBookModel.ClubNews" StoreEntitySet="NewsSet">
+      <EndProperty Name="Club">
+        <ScalarProperty Name="Id" ColumnName="Club_Id" />
+      </EndProperty>
+      <EndProperty Name="News">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
 </Mapping>

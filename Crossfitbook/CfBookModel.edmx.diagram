@@ -5,35 +5,41 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f946100f27a64e6c89e025f1ae347224" Name="Diagram1" >
-        <EntityTypeShape EntityType="CfBookModel.Club" PointX="0.5" PointY="1.375" Width="2" IsExpanded="false" />
-        <EntityTypeShape EntityType="CfBookModel.ClubWorkTime" PointX="0.5" PointY="3.5" Width="1.75" IsExpanded="false" />
-        <EntityTypeShape EntityType="CfBookModel.Equipment" PointX="0.75" PointY="4.875" Width="1.5" />
-        <EntityTypeShape EntityType="CfBookModel.Manufacturer" PointX="2.375" PointY="2.625" Width="1.5" IsExpanded="false" />
-        <EntityTypeShape EntityType="CfBookModel.Country" PointX="3" PointY="0.625" Width="1.5" IsExpanded="false" />
-        <EntityTypeShape EntityType="CfBookModel.City" PointX="5.875" PointY="0.75" Width="1.5" IsExpanded="false" />
-        <EntityTypeShape EntityType="CfBookModel.SocialNetwork" PointX="0.5" PointY="2.625" Width="1.5" IsExpanded="false" />
-        <EntityTypeShape EntityType="CfBookModel.Wod" PointX="6.625" PointY="7.75" Width="1.5" />
-        <EntityTypeShape EntityType="CfBookModel.Exercise" PointX="0.625" PointY="8.25" Width="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CfBookModel.Emom" PointX="10.625" PointY="7.625" Width="1.5" />
-        <EntityTypeShape EntityType="CfBookModel.Tabata" PointX="8.625" PointY="7.75" Width="1.5" />
-        <EntityTypeShape EntityType="CfBookModel.ClubEquipments" PointX="4.5" PointY="4.25" Width="1.5" />
+        <EntityTypeShape EntityType="CfBookModel.Club" PointX="4" PointY="1.75" Width="2" IsExpanded="false" />
+        <EntityTypeShape EntityType="CfBookModel.ClubWorkTime" PointX="4" PointY="0.75" Width="1.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="CfBookModel.Equipment" PointX="0.5" PointY="3" Width="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="CfBookModel.Manufacturer" PointX="4.125" PointY="3.625" Width="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="CfBookModel.Country" PointX="7.25" PointY="2" Width="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="CfBookModel.City" PointX="7.125" PointY="0.75" Width="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="CfBookModel.SocialNetwork" PointX="0.5" PointY="2.25" Width="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="CfBookModel.Wod" PointX="4.375" PointY="5.5" Width="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="CfBookModel.Exercise" PointX="0.625" PointY="5.125" Width="1.75" IsExpanded="false" />
         <AssociationConnector Association="CfBookModel.ClubCity" />
-        <AssociationConnector Association="CfBookModel.ClubClubEquipments" />
         <AssociationConnector Association="CfBookModel.ClubSocialNetwork" />
         <AssociationConnector Association="CfBookModel.CountryCity" />
         <AssociationConnector Association="CfBookModel.CountryManufacturer" />
-        <AssociationConnector Association="CfBookModel.ManufacturerClubEquipments" />
-        <AssociationConnector Association="CfBookModel.EquipmentClubEquipments" />
         <AssociationConnector Association="CfBookModel.EquipmentExercise" />
-        <EntityTypeShape EntityType="CfBookModel.ExerciseType" PointX="4.5" PointY="10.375" Width="1.5" />
+        <EntityTypeShape EntityType="CfBookModel.ExerciseType" PointX="0.5" PointY="7" Width="1.5" IsExpanded="false" />
         <EntityTypeShape EntityType="CfBookModel.Image" PointX="13.875" PointY="0.625" Width="1.5" IsExpanded="false" />
         <AssociationConnector Association="CfBookModel.ExerciseTypeExercise" />
         <AssociationConnector Association="CfBookModel.ExerciseImage" />
-        <EntityTypeShape EntityType="CfBookModel.ExerciseLoadType" Width="1.625" PointX="4.25" PointY="7.625" />
-        <AssociationConnector Association="CfBookModel.ExerciseExerciseLoadType" />
-        <EntityTypeShape EntityType="CfBookModel.ClubNetwork" Width="1.5" PointX="0.625" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="CfBookModel.LoadType" Width="1.625" PointX="2.625" PointY="7" IsExpanded="false" />
+        <EntityTypeShape EntityType="CfBookModel.ClubNetwork" Width="1.5" PointX="0.5" PointY="1.125" IsExpanded="false" />
         <AssociationConnector Association="CfBookModel.ClubNetworkClub" />
         <AssociationConnector Association="CfBookModel.ClubWorkTimeClub" />
+        <AssociationConnector Association="CfBookModel.LoadTypeWod" />
+        <AssociationConnector Association="CfBookModel.LoadTypeExercise" />
+        <AssociationConnector Association="CfBookModel.WodExercise" />
+        <EntityTypeShape EntityType="CfBookModel.WodCategory" Width="1.5" PointX="6.75" PointY="5.5" IsExpanded="false" />
+        <AssociationConnector Association="CfBookModel.WodCategoryWod" />
+        <EntityTypeShape EntityType="CfBookModel.News" Width="1.5" PointX="10.75" PointY="5.125" IsExpanded="false" />
+        <AssociationConnector Association="CfBookModel.NewsImage" />
+        <EntityTypeShape EntityType="CfBookModel.NewsType" Width="1.5" PointX="13" PointY="5.125" IsExpanded="false" />
+        <AssociationConnector Association="CfBookModel.NewsTypeNews" />
+        <AssociationConnector Association="CfBookModel.ClubEquipment" />
+        <AssociationConnector Association="CfBookModel.ManufacturerEquipment" />
+        <AssociationConnector Association="CfBookModel.ManufacturerNews" />
+        <AssociationConnector Association="CfBookModel.ClubNews" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

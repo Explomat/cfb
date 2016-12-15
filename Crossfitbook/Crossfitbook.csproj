@@ -160,24 +160,83 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="CfBookModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CfBookModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CfBookModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CfBookModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="CfBookModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CfBookModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>CfBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Club.cs">
+      <DependentUpon>CfBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClubNetwork.cs">
+      <DependentUpon>CfBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClubWorkTime.cs">
+      <DependentUpon>CfBookModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Country.cs">
+      <DependentUpon>CfBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment.cs">
+      <DependentUpon>CfBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Exercise.cs">
+      <DependentUpon>CfBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExerciseType.cs">
+      <DependentUpon>CfBookModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Image.cs">
+      <DependentUpon>CfBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoadType.cs">
+      <DependentUpon>CfBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manufacturer.cs">
+      <DependentUpon>CfBookModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="News.cs">
+      <DependentUpon>CfBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewsType.cs">
+      <DependentUpon>CfBookModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SocialNetwork.cs">
+      <DependentUpon>CfBookModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Wod.cs">
+      <DependentUpon>CfBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WodCategory.cs">
+      <DependentUpon>CfBookModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CfBookModel.edmx.sql" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -191,6 +250,17 @@
       <LastGenOutput>CfBookModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="CfBookModel.edmx.diagram">
+      <DependentUpon>CfBookModel.edmx</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="CfBookModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CfBookModel.Context.cs</LastGenOutput>
+      <DependentUpon>CfBookModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="CfBookModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CfBookModel.cs</LastGenOutput>
       <DependentUpon>CfBookModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -250,6 +320,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
